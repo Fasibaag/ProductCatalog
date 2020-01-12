@@ -1,0 +1,201 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.heading{
+    padding: 1px 10px;
+    background-color: #5d96fd;
+    color: #ffffff;
+}
+
+.category_tabs{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    align-items: center;
+    .filterBy{
+        margin-right: 5px;
+    }
+    .categoryBox{
+            display: flex;
+            border: 1px solid #2980b9;
+
+    .category-item{
+        padding: 5px;
+    cursor: pointer;      
+    }    
+    .general {
+        border-left: 1px solid #2980b9;
+        border-right: 1px solid #2980b9;
+    }
+    .general, .other{
+        &:hover{
+            background-color: #2980b9;
+            color : #ffffff;
+        }
+    }
+}
+}
+
+.active {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+.section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-gap: 50px;
+    width: 90%;
+    margin: 50px auto;
+    justify-content: center;
+
+    .item{
+        background-color: #ffffff;
+        height: 300px;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        text-align: center;
+        position: relative;
+        box-shadow:0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+
+        &:hover{
+            transition: 0.5s;
+            box-shadow:2px 1px 20px 5px rgba(0, 0, 0, 0.3);       
+        }
+
+        .socialIcons{
+            position: absolute;
+            bottom: 75;
+            ul, li { margin-left: 0; padding: 5px; }
+            ul {
+                list-style: none;
+                margin: 0;
+                display: flex;
+            }
+            li:hover {  
+            animation-name: spin;
+            animation-duration: 300ms;
+            animation-iteration-count: finite;
+            animation-timing-function: linear;
+            @keyframes spin {
+                from {
+                    transform:rotate(0deg);
+                }
+                to {
+                    transform:rotate(360deg);
+                }
+            }
+            }
+        }
+ 
+        .sale{
+                position: absolute;
+                display: none;
+                padding: 5px 15px;
+                background-color: yellow;
+                font-weight: bold;
+                left: 0px;
+        }
+        .divider{
+            border-bottom: 1px solid #ccc;           
+        }
+        .info{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .image{
+            height: 220px;
+            padding:20px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .authors {
+            text-transform: capitalize; 
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: lighter;
+        }
+
+        .detail{
+            padding: 5px;
+            text-align: center;
+            height: 51;
+            .price{
+                color: #5d96fd;
+                font-weight: bold;
+            }
+        }
+        .cartBut-container{
+            display: flex; 
+            align-content: space-around;
+            flex-direction: row; 
+        .cart{
+            flex-basis: 50%;
+            text-align: center;
+            font-size: 12px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#000000;
+            &:hover{
+                background-color: #2980b9;
+            color: white;                    
+            }
+            }
+            .buy{
+                flex-basis: 50%;
+                text-align: center;
+                font-size: 12px;
+                height: 28px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color:#000000;
+                &:hover{
+                    background-color: orange;
+                color: white;                    
+                }
+                }
+            
+        }
+    }
+}
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  }  
+  
+  .item.dragElem {
+    opacity: 0.4;
+  }
+  .item.over {
+    border: 2px dashed #000;
+    border-top: 2px solid blue;
+  }
+  
